@@ -8,18 +8,13 @@
  * ------------------------------------------------------------
  */
 {
-  "sections": {
-    "main": {
-      "type": "header",
-      "settings": {}
+    "name": "Footer Group",
+    "type": "footer",
+    "sections": {
+        "main":{
+            "type": "footer",
+            "settings": {}
+        }
     },
-    "hero-banner": {
-      "type": "hero-banner",
-      "settings": {}
-    }
-  },
-  "order": [
-    "main",
-    "hero-banner"
-  ]
+    "order": ["main"]
 }
