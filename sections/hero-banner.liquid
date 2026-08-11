@@ -1,3 +1,6 @@
+{%  assign full_width_section = section.settings.full_width %}
+
+
 <div class="hero-banner">
     <div class="hero-banner__inner">
       
@@ -12,7 +15,32 @@
 {
 "name": "Hero Banner",
 "tag": "section",
-"settings": [],
+"settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "text",
+      "id" : "heading_text",
+      "label": "Heading Text",
+      "default": "Welcome to sourav store"
+    },
+    {
+        "type": "textarea",
+        "id" : "subheading_text",
+        "label": "Subheading Text",
+        "default": "This is a sample subheading text for the hero banner section."
+    },
+    {
+     "type" : "checkbox",
+     "id": "full_width",
+     "label": "Full Width",
+     "default": false
+    }
+    
+],
 "presets" :[
     {
         "name": "Hero Banner"
