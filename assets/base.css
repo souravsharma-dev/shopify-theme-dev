@@ -59,5 +59,11 @@ button, input, select, textarea{
 }
 
 .page-width--full{
-    max-width: 100%;
+    max-width: none;
+}
+
+@media (min-width: 750px){
+    .page-width{
+        padding-inline: var(--page-padding-desktop);
+    }
 }

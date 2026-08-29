@@ -1,17 +1,30 @@
-{%  assign full_width_section = section.settings.full_width %}
+{%  liquid 
+    assign full_width_section = section.settings.full_width_section 
+    assign hero_image = section.settings.hero_image
+    assign heading_text = section.settings.heading_text
+    assign subheading_text = section.settings.subheading_text
+    -%}
 
 
-<div class="hero-banner">
-    <div class="hero-banner__inner">
-      
+   <div class="hero-banner page-width {% if full_width_section %} page-width--full {% endif %}">
+    <div class="hero-banner__image image-wrapper">
+    {% if hero_image != blank %}
+        {{ hero_image | image_url: width: 1300 |image_tag}}
+    {% else %}
+    {{"hero-apparel-1" | placeholder_svg_tag }}
+    {% endif %} 
     </div>
+
+    <div class="hero-banner__content">
+        <h1 class="hero-banner__heading">{{ heading_text }}</h1>
+        <p class="hero-banner__subheading">{{ subheading_text }}</p>
+    </div>
+   
 </div>
 
-<div>
-{{  "hero-apparel-1" | placeholder_svg_tag }}     
-</div>
 
 {% schema %}
+
 {
 "name": "Hero Banner",
 "tag": "section",
@@ -35,7 +48,7 @@
     },
     {
      "type" : "checkbox",
-     "id": "full_width",
+     "id": "full_width_section",
      "label": "Full Width",
      "default": false
     }
