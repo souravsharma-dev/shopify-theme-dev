@@ -1,1 +1,28 @@
-<h1> {{ shop.name }} </h1>
+<!-- <h1> {{ shop.name }} </h1>-->
+
+{%- liquid 
+    assign menu = section.settings.menu 
+    -%}
+    <nav class=""> 
+        <ul class="">
+            {% for link in menu.links %}
+                <li>{{ link.title | link_to: link.url }} </li>
+            {% endfor %}
+            <li></li>
+        </ul>
+    </nav>
+
+    {% schema %}
+    {
+    "name": "header",
+    "tag": "section",
+    "settings": [
+        {
+        "type": "link_list",
+        "id": "menu",
+        "label": "select menu",
+        "default": "main-menu"
+    }
+                ]
+        }
+    {% endschema %}

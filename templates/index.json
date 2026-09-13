@@ -9,23 +9,17 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "header",
-      "settings": {}
-    },
     "hero_banner_qb4HXL": {
       "type": "hero-banner",
       "name": "Hero Banner",
       "settings": {
         "hero_image": "shopify://shop_images/ChatGPT_Image_Aug_29_2026_06_32_08_PM.png",
         "heading_text": "Welcome to sourav's store",
-        "subheading_text": "This is a sample subheading text for the hero banner section.",
-        "full_width": false
+        "subheading_text": "This is a sample subheading text for the hero banner section."
       }
     }
   },
   "order": [
-    "main",
     "hero_banner_qb4HXL"
   ]
 }
