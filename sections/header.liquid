@@ -3,10 +3,23 @@
 {%- liquid 
     assign menu = section.settings.menu 
     -%}
-    <nav class=""> 
-        <ul class="">
+    <nav class="primary-navigation"> 
+        <ul class="menu">
             {% for link in menu.links %}
-                <li>{{ link.title | link_to: link.url }} </li>
+                {% if link.links !=blank %}
+                    <li>
+                        <details>
+                            <summary>
+                                {{ link.title }} <span>icon</span>
+                            <ul>
+                                {% for sublink in link.links %}
+                            </ul>
+                            </summary>
+                        </details>
+                    </li>
+                {% endfor %}
+
+                <!-- <li>{{ link.title | link_to: link.url }} </li> -->
             {% endfor %}
             <li></li>
         </ul>
