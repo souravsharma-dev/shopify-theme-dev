@@ -7,19 +7,22 @@
         <ul class="menu">
             {% for link in menu.links %}
                 {% if link.links !=blank %}
+                
                     <li>
                         <details>
                             <summary>
-                                {{ link.title }} <span>icon</span>
+                                {{ link.title }} <span>icons</span>
                             <ul>
                                 {% for sublink in link.links %}
                             </ul>
                             </summary>
                         </details>
                     </li>
+                    {% else %}
+                  <li>{{ link.title | link_to: link.url }} </li>
                 {% endfor %}
 
-                <!-- <li>{{ link.title | link_to: link.url }} </li> -->
+                <!--  -->
             {% endfor %}
             <li></li>
         </ul>
