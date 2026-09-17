@@ -7,24 +7,36 @@
         <ul class="menu">
             {% for link in menu.links %}
                 {% if link.links !=blank %}
-                
                     <li>
                         <details>
                             <summary>
                                 {{ link.title }} <span>icons</span>
+                                </summary>
                             <ul>
-                                {% for sublink in link.links %}
+                                {% for child in link.links %}
+                                    {% if child.links != blank %}
+                                    <li> 
+                                        <details>
+                                            <summary>
+                                                {{ child.title }} <span>icons</span>
+                                            </summary>
+                                            <ul>
+                                                {% for grandchild in child.links %}
+                                                    <li>{{ grandchild.title | link_to: grandchild.url }} </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </details>
+                                    </li>
                             </ul>
-                            </summary>
                         </details>
                     </li>
                     {% else %}
-                  <li>{{ link.title | link_to: link.url }} </li>
-                {% endfor %}
+                  <li>{{ child.title | link_to: child.url }} </li>
+                    {% endif %}
 
                 <!--  -->
             {% endfor %}
-            <li></li>
+           
         </ul>
     </nav>
 
